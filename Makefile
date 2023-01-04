@@ -11,9 +11,18 @@ migrateup:
     migrate -path db/migrate -database "postgres://root:secret@localhost:5432/simple_bank?sslmode=disable" -verbose up
 
 migratedown:
-    migrate -path db/migrate -database "postgres://root:secret@localhost:5432/simple_bank?sslmode=disable" -verbose down
+        migrate -path db/migrate -database "postgres://root:secret@localhost:5432/simple_bank?sslmode=disable" -verbose down
+
+db_docs:
+	dbdocs build doc/db.dbml
+
+db_schema:
+	dbml2sql --postgres -o doc/schema.sql doc/db.dbml
 
 sqlc:
-   sqlc generate
+	sqlc generate
 
-.PHONY: postgres createddb dropdb migrateup
+test:
+	go test -v -cover ./...
+
+.PHONY: network postgres
