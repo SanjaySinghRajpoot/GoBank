@@ -25,7 +25,8 @@ jobs:
           POSTGRES_PASSWORD: secret
           POSTGRES_USER: root
           POSTGRES_DB: simple_bank
-
+        ports:
+          - 5432:5432
         # Set health checks to wait until postgres has started
         options: >-
           --health-cmd pg_isready
@@ -43,6 +44,12 @@ jobs:
 
       # - name: Build
       #   run: go build -v ./...
+
+      - name: Install go-lang migrate
+        run: | 
+           curl -L https://github.com/golang-migrate/migrate/releases/download/v4.15.2/migrate.linux-arm64.tar.gz | tar xvz
+           sudo mv migrate.linux-amd64 /usr/bin/migrate
+           which migrate
 
       - name: Run Migrations
         run: migrate -path db/migrate -database "postgres://root:secret@localhost:5432/simple_bank?sslmode=disable" -verbose up
