@@ -25,4 +25,7 @@ sqlc:
 test:
 	go test -v -cover ./...
 
-.PHONY: network postgres
+server:
+   go run main.go
+
+.PHONY: network postgres server
