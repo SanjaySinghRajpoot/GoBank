@@ -15,7 +15,7 @@ migratedown:
 
 migrateup1:
         migrate -path db/migrate -database "postgres://root:secret@localhost:5432/simple_bank?sslmode=disable" -verbose up 1
-
+ 
 migratedown1:
         migrate -path db/migrate -database "postgres://root:secret@localhost:5432/simple_bank?sslmode=disable" -verbose down 1
  
