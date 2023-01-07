@@ -19,7 +19,7 @@ func main() {
 
 	conn, err := sql.Open(config.DBDriver, config.DBSource)
 	if err != nil {
-		log.Fatal("Cannot connect to the database", err)
+		log.Fatal("Cannot connect to the database....", err)
 	}
 
 	store := db.NewStore(conn)
