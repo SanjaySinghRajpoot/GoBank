@@ -8,6 +8,7 @@ type Config struct {
 	ServerAddress string `mapstructure:"SERVER_ADDRESS"`
 }
 
+// LoadConfig reads configuration from file or environment variables.
 func LoadConfig(path string) (config Config, err error) {
 	viper.AddConfigPath(path)
 	viper.SetConfigName("app")
@@ -21,6 +22,5 @@ func LoadConfig(path string) (config Config, err error) {
 	}
 
 	err = viper.Unmarshal(&config)
-
 	return
 }
