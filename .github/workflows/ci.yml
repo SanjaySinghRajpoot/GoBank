@@ -41,15 +41,13 @@ jobs:
         uses: actions/setup-go@v3
         with:
           go-version: 1.19
-
-      # - name: Build
-      #   run: go build -v ./...
-
-      - name: Install go-lang migrate
-        run: | 
-           curl -L https://github.com/golang-migrate/migrate/releases/download/v4.15.2/migrate.linux-arm64.tar.gz | tar xvz
-           sudo mv migrate.linux-amd64.tar.gz /usr/bin/migrate
-           which migrate
+        id: go
+        
+      - name: Install golang-migrate
+        run: |
+          curl -L https://github.com/golang-migrate/migrate/releases/download/v4.14.1/migrate.linux-amd64.tar.gz | tar xvz
+          sudo mv migrate.linux-amd64 /usr/bin/migrate
+          which migrate
 
       - name: Run Migrations
         run: migrate -path db/migrate -database "postgres://root:secret@localhost:5432/simple_bank?sslmode=disable" -verbose up
