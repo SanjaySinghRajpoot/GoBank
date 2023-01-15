@@ -50,7 +50,7 @@ jobs:
           which migrate
 
       - name: Run Migrations
-        run: migrate -path db/migrate -database "postgres://root:secret@localhost:5432/simple_bank?sslmode=disable" -verbose up
+        run: migrate -path db/migration -database "postgres://root:secret@localhost:5432/simple_bank?sslmode=disable" -verbose up
 
       - name: Test
         run: go test -v -cover ./...
