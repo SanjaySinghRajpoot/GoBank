@@ -3,7 +3,7 @@
 set -e 
 
 echo "run db migration"
-/app/migrate -path /app/migration -database "postgres://root:secret@localhost:5432/simple_bank?sslmode=disable" -verbose up
+/app/migrate -path /app/migration -database "$DB_SOURCE" -verbose up
 
 echo "start the app"
 exec "$@"
