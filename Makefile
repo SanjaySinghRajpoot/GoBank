@@ -10,6 +10,9 @@ dropdb:
 migrateup:
     migrate -path db/migrate -database "postgres://root:secret@localhost:5432/simple_bank?sslmode=disable" -verbose up
 
+migrateRDS:
+    migrate -path db/migrate -database "postgres://root:Dyy6hA8TsCP5uPudwEsG@go-bank.cxfbvzltflk5.ap-south-1.rds.amazonaws.com:5432/simple_bank" -verbose up
+
 migratedown:
         migrate -path db/migrate -database "postgres://root:secret@localhost:5432/simple_bank?sslmode=disable" -verbose down
 
