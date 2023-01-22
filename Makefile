@@ -37,4 +37,7 @@ test:
 server:
    go run main.go
 
+db_migration:
+   migrate create -ext sql db/migration -seq <migration_name>
+
 .PHONY: network postgres server
