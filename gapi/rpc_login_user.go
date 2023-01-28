@@ -37,7 +37,7 @@ func (server *Server) LoginUser(ctx context.Context, req *pb.LoginUserRequest) (
 
 	refreshToken, refreshPayload, err := server.tokenMaker.CreateToken(
 		user.Username,
-		server.config.RefreshTokenDuration,
+		time.Duration(15),
 	)
 	if err != nil {
 		return nil, status.Errorf(codes.Internal, "error: %s", err)
