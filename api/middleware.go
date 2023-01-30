@@ -42,13 +42,13 @@ func authMiddleware(tokenMaker token.Maker) gin.HandlerFunc {
 		}
 
 		accessToken := fields[1]
-		payload, err := tokenMaker.VerifyToken(accessToken)
+		payload, err := tokenMaker.VerifyToken(accessToken) // Call the verify function
 		if err != nil {
 			ctx.AbortWithStatusJSON(http.StatusUnauthorized, errorResponse(err))
 			return
 		}
 
 		ctx.Set(authorizationPayloadKey, payload)
-		ctx.Next()
+		ctx.Next() // Complete the Middleware and reach the next function
 	}
 }
