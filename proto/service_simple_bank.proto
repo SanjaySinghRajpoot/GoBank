@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package pb;
+
+// import "user.proto";
+import "rpc_login_user.proto";
+import "rpc_create_user.proto";
+import "google/api/annotations.proto";
+
+option go_package = "github.com/SanjaySinghRajpoot/GoBank/pb";
+
+
+service GoBank {
+    rpc CreateUser (CreateUserRequest) returns (CreateUserResponse) {
+        option(google.api.http) ={
+            post: "/v1/create_user"
+            body: "*"
+        };
+    }
+
+    rpc LoginUser (LoginUserRequest) returns (LoginUserResponse) {
+        option(google.api.http) = {
+            post: "/v1/login_user"
+            body: "*"
+        };
+    }
+}
