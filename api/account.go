@@ -9,11 +9,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type createAccountRequest struct {
-	// Owner    string `json:"owner" binding:"required"`
-	Currency string `json:"currency" binding:"required,currency"`
-}
-
 func (server *Server) createAccount(ctx *gin.Context) {
 	var req createAccountRequest
 	if err := ctx.ShouldBindJSON(&req); err != nil {

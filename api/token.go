@@ -9,15 +9,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type renewAccessTokenRequest struct {
-	RefreshToken string `json:"refresh_token" binding:"required"`
-}
-
-type renewAccessTokenResponse struct {
-	AccessToken         string    `json:"access_token"`
-	AccessTokenExpireAt time.Time `json:"access_token_expire_at"`
-}
-
 func (server *Server) renewAccessToken(ctx *gin.Context) {
 
 	var req renewAccessTokenRequest
