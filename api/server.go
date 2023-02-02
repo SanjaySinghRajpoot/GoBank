@@ -9,13 +9,6 @@ import (
 	"github.com/go-playground/validator/v10"
 )
 
-type Server struct {
-	config     util.Config
-	store      db.Store
-	tokenMaker token.Maker
-	router     *gin.Engine
-}
-
 func NewServer(config util.Config, store db.Store) *Server {
 	tokenMaker, err := token.NewPasetoMaker("12345678901234567890123456789012")
 	if err != nil {
