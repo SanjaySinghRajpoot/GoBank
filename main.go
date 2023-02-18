@@ -47,7 +47,8 @@ func runGrpcServer(config util.Config, store *db.Store) {
 	// 	log.Fatal("cannot start server: ", err)
 	// }
 
-	grpcServer := grpc.NewServer()
+	gprcLogger := grpc.UnaryInterceptor(gapi.GrpcLogger)
+	grpcServer := grpc.NewServer(gprcLogger)
 	pb.RegisterGoBankServer(grpcServer, server)
 	reflection.Register(grpcServer)
 
