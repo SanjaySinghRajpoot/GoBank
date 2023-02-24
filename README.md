@@ -1,7 +1,5 @@
 # GoBank
-A banking software in GoLang. 
-
-It will provide APIs for the frontend to do the following things:
+A backend banking service in GoLang. 
 
 - Create and manage bank accounts.
 - Record all balance changes to each of the accounts.
