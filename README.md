@@ -1,11 +1,10 @@
 # GoBank
 A backend banking service in GoLang. 
 
-- Create and manage bank accounts.
-- Record all balance changes to each of the accounts.
-- Perform a money transfer between 2 accounts.
-
-
+• A scalable banking service in GoLang. Users can Create Accounts, tranfer money and disable bank account.
+• RESTful HTTP APIs using Gin framework. Robust Unit testing and app configs for deployment. Authenticating
+users, and securing the APIs with JWT and PASETO
+• CI/CD to build and push latest docker images from Container Registry to kubernetes Cluster on AWS.
 
 ### Checkout the DB Docs [GoBank](https://dbdocs.io/sanjay22rajpoot/GoBank?view=relationships)
 # Tech Stack 
