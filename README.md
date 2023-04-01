@@ -1,13 +1,12 @@
 # GoBank 
 
 A backend banking service in GoLang. 
-• A scalable banking service in GoLang. Users can Create Accounts, transfer money and disable bank account. 
-• RESTful HTTP APIs using Gin framework. Robust Unit testing and app configs for deployment. Authenticating users, and securing the APIs with JWT and PASETO 
-• CI/CD to build and push latest docker images from Container Registry to kubernetes Cluster on AWS. • Run entire application using a single docker command 
-• Applied MVC architecture and followed best practices to easily maintain the code • Test cases for Unit testing and end-to-end testing 
-• Swagger docs added for APIs 
-• gRPC APIs used for low latency and high throughput communication. 
-• Secured APIs using JWT and Paseto token Authentication, Refresh and auth token feature added 
+- A scalable banking service in GoLang. Users can Create Accounts, transfer money and disable bank account. 
+- RESTful HTTP APIs using Gin framework. Robust Unit testing and app configs for deployment. Authenticating users, and securing the APIs with JWT and PASETO 
+- CI/CD to build and push latest docker images from Container Registry to kubernetes Cluster on AWS. • Run entire application using a single docker command 
+- Applied MVC architecture and followed best practices to easily maintain the code • Test cases for Unit testing - Swagger docs added for APIs 
+- gRPC APIs used for low latency and high throughput communication. 
+- Secured APIs using JWT and Paseto token Authentication, Refresh and auth token feature added 
 
 ### Checkout the DB Docs [GoBank](https://dbdocs.io/sanjay22rajpoot/GoBank?view=relationships) 
 
