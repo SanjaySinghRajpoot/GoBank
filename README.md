@@ -7,12 +7,11 @@ A backend banking service in GoLang.
 - CI/CD to build and push latest docker images from Container Registry to kubernetes Cluster on AWS. 
 - Run entire application using a single docker command 
 - Applied MVC architecture and followed best practices to easily maintain the code 
-- Test cases for Unit testing 
+- Test cases for Unit testing and e2e testing
 - Swagger docs added for APIs 
 - gRPC APIs used for low latency and high throughput communication. 
 - Secured APIs using JWT and Paseto token Authentication, Refresh and auth token feature added 
 
-### Checkout the DB Docs [GoBank](https://dbdocs.io/sanjay22rajpoot/GoBank?view=relationships) 
 
 # Tech Stack 
 - Backend - Go, Gin, Golang, PSQL 
